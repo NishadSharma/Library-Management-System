@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Management Dashboard</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>LibManager</h2>
+    <ul class="nav-link">
+      <li><a href="#" onclick="showDashboard()">Dashboard</a></li>
+      <li><a href="#" onclick="manageBooks()">Manage Books</a></li>
+      <li><a href="#" onclick="issueReturn()">Issue/Return</a></li>
+      <li><a href="#" onclick="manageUsers()">Users</a></li>
+      <li><a href="#" onclick="viewReports()">Reports</a></li>
+      <li><a href="#" onclick="openSettings()">Settings</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <span>Dashboard</span>
+      <button class="login-btn" onclick="openLoginModal()">Login / Sign Up</button>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Total Books</h3>
+        <p id="totalBooks">2,458 books available</p>
+      </div>
+      <div class="card">
+        <h3>Issued Books</h3>
+        <p id="issuedBooks">123 books currently issued</p>
+      </div>
+      <div class="card">
+        <h3>Registered Users</h3>
+        <p id="registeredUsers">870 active users</p>
+      </div>
+      <div class="card">
+        <h3>Overdue Returns</h3>
+        <p id="overdueReturns">15 books overdue</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login/Sign-Up Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoginModal()">&times;</span>
+      <h2>Login / Sign Up</h2>
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="#" onclick="switchToSignUp()">Sign Up</a></p>
+      </form>
+      <form id="signUpForm" style="display: none;">
+        <label for="newUsername">Username</label>
+        <input type="text" id="newUsername" name="newUsername" placeholder="Create a username" required />
+        <label for="newPassword">Password</label>
+        <input type="password" id="newPassword" name="newPassword" placeholder="Create a password" required />
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
